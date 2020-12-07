@@ -1,7 +1,5 @@
 package com.oracle;
 
-import com.oracle.sort.UtilFunctions;
-
 public class Imp {
     public static void main(String[] args) {
         int[] arr = {20, 35, -15, 7, 55, 1, -22};

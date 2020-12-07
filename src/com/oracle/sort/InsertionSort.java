@@ -1,5 +1,7 @@
 package com.oracle.sort;
 
+import com.oracle.UtilFunctions;
+
 public class InsertionSort {
 
     public static void main(String[] args) {

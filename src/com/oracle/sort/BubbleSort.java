@@ -1,6 +1,6 @@
 package com.oracle.sort;
 
-import static com.oracle.sort.UtilFunctions.swap;
+import static com.oracle.UtilFunctions.swap;
 
 public class BubbleSort {
 

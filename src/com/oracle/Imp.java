@@ -4,39 +4,27 @@
 //
 //public class Imp {
 //    public static void main(String[] args) {
-//        int[] arr = {20, 35, -15, 7, 55, 1, -22};
-//        quickSort(arr, 0, arr.length);
+//        int[] arr = {2, 5, 9, 8, 2, 8, 7, 10, 4, 3};
+//        countingSort(arr, 1, 10);
 //        UtilFunctions.print(arr);
 //
 //    }
 //
-//    // quick sort
-//    static void quickSort(int arr[], int start, int end) {
-//        if (end - start < 2) {
-//            return;
-//        }
-//        int pivotIndex = partition(arr, start, end);
-//        quickSort(arr, start, pivotIndex);
-//        quickSort(arr, pivotIndex + 1, end);
-//    }
+//    static void countingSort(int[] input, int min, int max) {
+//        int[] countArray = new int[(max - min + 1)];
+
+//        for (int i = 0; i < input.length; i++) {
+//            countArray[input[i] - min]++;
 //
-//    static int partition(int arr[], int start, int end) {
-//        int pivot = arr[start];
-//        int i = start, j = end;
-//        while (j > i) {
-//            while ((j > i) && (arr[--j] >= pivot)) ;
-//            if (j > i) {
-//                arr[i] = arr[j];
-//            }
-//            while ((j > i) && (arr[++i] <= pivot)) ;
-//            if (j > i) {
-//                arr[j] = arr[i];
-//            }
 //        }
-//        System.out.println("i: " + i + " | " + "j: " + j);
-//        arr[i] = pivot;
-//        return i;
+//        int j = 0;
+//        for (int i = min; i <= max; i++) {
+//            while (countArray[i - min] > 0) {
+//                input[j++] = i;
+//                countArray[i - min]--;
+//            }
 //
+//        }
 //    }
 //
 //}

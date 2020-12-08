@@ -15,16 +15,17 @@ public class MergeSort {
 
     public static void mergeSort(int[] input, int start, int end) {
         // breaking point for recursion (if the method was calling with one method array)
-
         if (end - start < 2) {
             return;
         }
         int mid = (start + end) / 2;
         // for the left  array side
         mergeSort(input, start, mid);
+
         // for the right  array side
         mergeSort(input, mid, end);
 
+        System.out.println("start: " + start + " | "  + "mid: "+ mid  + " | " + "end: "  + end  );
         merge(input, start, mid, end);
 
     }
@@ -46,32 +47,16 @@ public class MergeSort {
         // to loop over the right array
         int j = mid;
 
-        // to keep track where we are in the te mporary array
+        // to keep track where we are in the te temp array
         int tempIndex = 0;
 
-        // need to be large enough to hold the length of the array
-        // largest: the whole array
         int[] temp = new int[end - start];
 
         // while we didn't finish traversing  any of the array sides
         while ((i < mid) && (j < end)) {
-            // ternary operator
             // (=) to make the algorithm stable
+            temp[tempIndex++] = (input[i] <= input[j]) ? input[i++] : input[j++];
 
-            temp[tempIndex++] = input[i] <= input[j] ? input[i++] : input[j++];
-            //if left element is greater
-            /*
-            if (input[i] <= input[j]) {
-                temp[tempIndex] = input[i];
-                i++;
-            }
-            //if right element is greater
-            else {
-                temp[tempIndex] = input[j];
-                j++;
-            }
-            tempIndex++;
-        } */
         }
 
         /* Optimization

@@ -6,7 +6,32 @@ public class InsertionSort {
 
     public static void main(String[] args) {
         int[] arr = {20, 35, -15, 7, 55, 1, -22};
+//        iterationInsertionSort(arr);
+        recursiveInsertionSort(arr, 1);
+        UtilFunctions.print(arr);
 
+
+//
+//        UtilFunctions.print(arr);
+    }
+
+    static void recursiveInsertionSort(int[] input, int firstUnsortedIndex){
+        if(firstUnsortedIndex >= input.length){
+            return;
+        }
+        int newElement = input[firstUnsortedIndex];
+
+        int i;
+        for (i = firstUnsortedIndex; i > 0 && input[i - 1] > newElement; i--) {
+            input[i] = input[i - 1];
+        }
+
+        input[i] = newElement;
+        firstUnsortedIndex++;
+        recursiveInsertionSort(input, firstUnsortedIndex);
+    }
+
+    static void iterationInsertionSort(int[] arr){
         for (int firstUnsortedIndex = 1; firstUnsortedIndex < arr.length; firstUnsortedIndex++) {
             int newElement = arr[firstUnsortedIndex];
             /*
@@ -22,7 +47,5 @@ public class InsertionSort {
 
             arr[i] = newElement;
         }
-
-        UtilFunctions.print(arr);
     }
 }

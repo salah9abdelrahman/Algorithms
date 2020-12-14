@@ -25,8 +25,7 @@ public class MergeSort {
         // for the right  array side
         mergeSort(input, mid, end);
 
-        System.out.println("start: " + start + " | "  + "mid: "+ mid  + " | " + "end: "  + end  );
-        merge(input, start, mid, end);
+        mergeDesc(input, start, mid, end);
 
     }
 
@@ -74,6 +73,32 @@ public class MergeSort {
         System.arraycopy(input, i, input, start + tempIndex, mid - i);
 
         //copy from the temp array
+        System.arraycopy(temp, 0, input, start, tempIndex);
+    }
+
+    // to merge the two sides
+    private static void mergeDesc(int[] input, int start, int mid, int end) {
+        /*   Optimization:
+        (last element in the left partition <= first element in the right partition)
+        so to avoid needless sorting
+        example {2, 4} {5, 7} ==> if(4 <= 5)=> dont do anything
+*/
+        if (input[mid - 1] >= input[mid]) {
+            return;
+        }
+        int i = start;
+        int j = mid;
+        int tempIndex = 0;
+
+        int[] temp = new int[end - start];
+
+        while ((i < mid) && (j < end)) {
+            temp[tempIndex++] = (input[i] >= input[j]) ? input[i++] : input[j++];
+
+        }
+
+        System.arraycopy(input, i, input, start + tempIndex, mid - i);
+
         System.arraycopy(temp, 0, input, start, tempIndex);
     }
 }

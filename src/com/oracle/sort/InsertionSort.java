@@ -6,14 +6,12 @@ public class InsertionSort {
 
     public static void main(String[] args) {
         int[] arr = {20, 35, -15, 7, 55, 1, -22};
-//        iterationInsertionSort(arr);
+        iterationInsertionSort(arr);
 //        recursiveInsertionSort(arr, 1);
-        recursiveInsertionSort2(arr, arr.length);
+//        recursiveInsertionSort2(arr, arr.length);
+
         UtilFunctions.print(arr);
 
-
-//
-//        UtilFunctions.print(arr);
     }
 
 
@@ -24,13 +22,11 @@ public class InsertionSort {
             i > 0: we haven't hit the first of the array
             arr[i-1] > newElement: keep traversing as long as the element we are looking at in
             traversing is greater than the new element we want to insert
-
              */
             int i;
             for (i = firstUnsortedIndex; i > 0 && arr[i - 1] > newElement; i--) {
                 arr[i] = arr[i - 1];
             }
-
             arr[i] = newElement;
         }
     }
@@ -39,7 +35,6 @@ public class InsertionSort {
         if (firstUnsortedIndex >= input.length) {
             return;
         }
-
 
         int newElement = input[firstUnsortedIndex];
 
@@ -61,20 +56,13 @@ public class InsertionSort {
         recursiveInsertionSort2(input, numOfItems - 1);
 
         int newElement = input[numOfItems -1];
-            /*
-            i > 0: we haven't hit the first of the array
-            arr[i-1] > newElement: keep traversing as long as the element we are looking at in
-            traversing is greater than the new element we want to insert
-
-             */
         int i;
+
         for (i = numOfItems -1; i > 0 && input[i - 1] > newElement; i--) {
             input[i] = input[i - 1];
         }
 
         input[i] = newElement;
-
-
     }
 
 }

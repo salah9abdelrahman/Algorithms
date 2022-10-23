@@ -1,4 +1,4 @@
-package com.oracle.recursion;
+package com.salah.recursion;
 
 public class Fibonacci {
 

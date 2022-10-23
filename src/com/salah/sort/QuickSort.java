@@ -1,6 +1,6 @@
-package com.oracle.sort;
+package com.salah.sort;
 
-import com.oracle.UtilFunctions;
+import com.salah.UtilFunctions;
 
 public class QuickSort {
     public static void main(String[] args) {

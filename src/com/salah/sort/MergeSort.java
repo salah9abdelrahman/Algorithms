@@ -1,8 +1,6 @@
-package com.oracle.sort;
+package com.salah.sort;
 
-import com.oracle.UtilFunctions;
-
-import java.util.Arrays;
+import com.salah.UtilFunctions;
 
 public class MergeSort {
     public static void main(String[] args) {
